@@ -11,14 +11,42 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AKHomeViewController">
             <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="countLabel" destination="B3G-IF-mi8" id="za9-gC-2fk"/>
+                <outlet property="tableView" destination="FF3-77-04L" id="z6P-xH-PnR"/>
+                <outlet property="view" destination="U9X-Hj-EdH" id="tfN-0D-wlo"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view contentMode="scaleToFill" id="U9X-Hj-EdH">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FF3-77-04L">
+                    <rect key="frame" x="0.0" y="76.5" width="375" height="590.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ll7-YF-uxt"/>
+                        <outlet property="delegate" destination="-1" id="w9x-PJ-DA8"/>
+                    </connections>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3G-IF-mi8">
+                    <rect key="frame" x="16" y="40" width="343" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="FF3-77-04L" secondAttribute="trailing" id="Lmd-zy-jpK"/>
+                <constraint firstItem="B3G-IF-mi8" firstAttribute="leading" secondItem="U9X-Hj-EdH" secondAttribute="leading" constant="16" id="Pfi-rG-N9w"/>
+                <constraint firstItem="FF3-77-04L" firstAttribute="top" secondItem="B3G-IF-mi8" secondAttribute="bottom" constant="16" id="ika-zK-T7k"/>
+                <constraint firstAttribute="trailing" secondItem="B3G-IF-mi8" secondAttribute="trailing" constant="16" id="o5o-ao-d9h"/>
+                <constraint firstAttribute="bottom" secondItem="FF3-77-04L" secondAttribute="bottom" id="xlh-Ns-2wu"/>
+                <constraint firstItem="B3G-IF-mi8" firstAttribute="top" secondItem="U9X-Hj-EdH" secondAttribute="top" constant="40" id="yK3-Wq-SWk"/>
+                <constraint firstItem="FF3-77-04L" firstAttribute="leading" secondItem="U9X-Hj-EdH" secondAttribute="leading" id="zko-e4-4Ok"/>
+            </constraints>
+            <point key="canvasLocation" x="53.5" y="38.5"/>
         </view>
     </objects>
 </document>

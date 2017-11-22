@@ -12,11 +12,11 @@
 		9197CA251FC459B100B66C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9197CA231FC459B100B66C12 /* LaunchScreen.storyboard */; };
 		9197CA281FC459B100B66C12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197CA271FC459B100B66C12 /* main.m */; };
 		9197CA361FC45ADF00B66C12 /* AKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197CA341FC45ADF00B66C12 /* AKHomeViewController.m */; };
-		9197CA371FC45ADF00B66C12 /* AKHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9197CA351FC45ADF00B66C12 /* AKHomeViewController.xib */; };
 		9197CA3A1FC45B0500B66C12 /* AKBoggleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197CA391FC45B0500B66C12 /* AKBoggleManager.m */; };
 		9197CA3D1FC45C3B00B66C12 /* AKBoggleTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197CA3C1FC45C3B00B66C12 /* AKBoggleTreeNode.m */; };
 		9197CA401FC49BCC00B66C12 /* AKBoggleBoardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197CA3F1FC49BCC00B66C12 /* AKBoggleBoardItem.m */; };
 		9197CA481FC5333B00B66C12 /* BoggleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197CA471FC5333B00B66C12 /* BoggleAppTests.m */; };
+		9197CA511FC571B500B66C12 /* AKHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9197CA4F1FC5718E00B66C12 /* AKHomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		9197CA271FC459B100B66C12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9197CA331FC45ADF00B66C12 /* AKHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKHomeViewController.h; sourceTree = "<group>"; };
 		9197CA341FC45ADF00B66C12 /* AKHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKHomeViewController.m; sourceTree = "<group>"; };
-		9197CA351FC45ADF00B66C12 /* AKHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AKHomeViewController.xib; sourceTree = "<group>"; };
 		9197CA381FC45B0500B66C12 /* AKBoggleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKBoggleManager.h; sourceTree = "<group>"; };
 		9197CA391FC45B0500B66C12 /* AKBoggleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKBoggleManager.m; sourceTree = "<group>"; };
 		9197CA3B1FC45C3B00B66C12 /* AKBoggleTreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKBoggleTreeNode.h; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		9197CA451FC5333B00B66C12 /* BoggleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoggleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9197CA471FC5333B00B66C12 /* BoggleAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoggleAppTests.m; sourceTree = "<group>"; };
 		9197CA491FC5333B00B66C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9197CA4F1FC5718E00B66C12 /* AKHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AKHomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +136,7 @@
 			children = (
 				9197CA331FC45ADF00B66C12 /* AKHomeViewController.h */,
 				9197CA341FC45ADF00B66C12 /* AKHomeViewController.m */,
-				9197CA351FC45ADF00B66C12 /* AKHomeViewController.xib */,
+				9197CA4F1FC5718E00B66C12 /* AKHomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 			files = (
 				9197CA251FC459B100B66C12 /* LaunchScreen.storyboard in Resources */,
 				9197CA221FC459B100B66C12 /* Assets.xcassets in Resources */,
-				9197CA371FC45ADF00B66C12 /* AKHomeViewController.xib in Resources */,
+				9197CA511FC571B500B66C12 /* AKHomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
