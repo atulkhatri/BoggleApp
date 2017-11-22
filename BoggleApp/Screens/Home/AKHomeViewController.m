@@ -9,9 +9,10 @@
 #import "AKHomeViewController.h"
 #import "AKBoggleManager.h"
 
-#define kSampleDimension 4
-#define kSampleBoard @[@[@"a",@"b",@"c",@"d"],@[@"e",@"f",@"g",@"h"],@[@"i",@"j",@"k",@"l"],@[@"m",@"n",@"o",@"p"]]
-#define kSampleDictionary @[@"aeh",@"abe",@"dab",@"gda",@"ifb",@"htp",@"ahe",@"dbg",@"afkp",@"kgfj",@"onjg"]
+#define kSampleDimension 3
+#define kSampleBoard @[@[@"y",@"o",@"x"],@[@"r",@"b",@"a"],@[@"v",@"e",@"d"]]
+#define kSampleDictionary @[@"bred", @"yore", @"byre", @"abed", @"oread", @"bore", @"orby", @"robed", @"broad", @"byroad", @"robe", @"bored", @"derby", @"bade", @"aero", @"read", @"orbed", @"verb", @"aery", @"bead", @"bread", @"very", @"road", @"robbed", @"robber", @"board", @"dove", @"rob", @"ore", @"abe", @"bad"]
+#define kMinimumWordLength 4
 
 @interface AKHomeViewController ()
 
@@ -23,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSArray* words = [[AKBoggleManager sharedInstance] findWordsInBoard:kSampleBoard ofDimension:kSampleDimension withDictionary:kSampleDictionary];
+    NSArray* words = [[AKBoggleManager sharedInstance] findWordsInBoard:kSampleBoard ofDimension:kSampleDimension withDictionary:kSampleDictionary andMinimumWordLength:kMinimumWordLength];
     NSLog(@"Words: %@", words);
 }
 

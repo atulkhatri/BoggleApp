@@ -10,5 +10,5 @@
 
 @interface AKBoggleManager : NSObject
 + (instancetype)sharedInstance;
-- (NSArray*)findWordsInBoard:(NSArray*)board ofDimension:(NSInteger)dimension withDictionary:(NSArray*)dictionary;
+- (NSArray*)findWordsInBoard:(NSArray*)board ofDimension:(NSInteger)dimension withDictionary:(NSArray*)dictionary andMinimumWordLength:(NSInteger)length;
 @end

@@ -13,9 +13,10 @@
 #define kMaxChars 26
 
 @interface AKBoggleManager()
-@property (nonatomic, strong) NSArray* board;
+@property (nonatomic, strong) NSArray* boggleBoard;
 @property (nonatomic, strong) NSArray* dictionary;
 @property (nonatomic, assign) NSInteger dimension;
+@property (nonatomic, assign) NSInteger minWordLength;
 
 @property (nonatomic, strong) NSMutableArray* wordsFound;
 @end
@@ -30,20 +31,21 @@
     return instance;
 }
 
-- (NSArray*)findWordsInBoard:(NSArray*)board ofDimension:(NSInteger)dimension withDictionary:(NSArray*)dictionary{
+- (NSArray*)findWordsInBoard:(NSArray*)board ofDimension:(NSInteger)dimension withDictionary:(NSArray*)dictionary andMinimumWordLength:(NSInteger)length{
     self.wordsFound = [NSMutableArray new];
     self.dimension = dimension;
     self.dictionary = dictionary;
-    self.board = [self createBoardWithBoard:board];
+    self.minWordLength = length;
+    self.boggleBoard = [self boggleBoardWithBoard:board];
 
-    AKBoggleTreeNode* rootNode = [self createTreeWithDictionary:dictionary];
+    AKBoggleTreeNode* rootNode = [self treeWithDictionary:dictionary];
     
-    for(NSMutableArray* rowArray in self.board){
+    for(NSMutableArray* rowArray in self.boggleBoard){
         for(AKBoggleBoardItem* item in rowArray){
             int ascii = [item.string characterAtIndex:0] - 'a';
             id childNode = [rootNode.childArray objectAtIndex:ascii];
             if([childNode isKindOfClass:[AKBoggleTreeNode class]]){
-                [self findWordInBoard:self.board withNode:childNode string:item.string row:[self.board indexOfObject:rowArray] andColumn:[rowArray indexOfObject:item]];
+                [self findWordInBoard:self.boggleBoard withNode:childNode string:item.string row:[self.boggleBoard indexOfObject:rowArray] andColumn:[rowArray indexOfObject:item]];
             }
         }
     }
@@ -53,49 +55,39 @@
 - (void)findWordInBoard:(NSArray*)board withNode:(AKBoggleTreeNode*)node string:(NSString*)string row:(NSInteger)row andColumn:(NSInteger)column{
     if(node.leafNode){
         [self.wordsFound addObject:string];
-    }else{
-        if(row >= 0 && row < self.dimension && column >= 0 && column < self.dimension){
-            AKBoggleBoardItem* item = [self boardItemForRow:row andColumn:column];
-            if(item && !item.visited){
-                item.visited = YES;
-                
-                for(id childNode in node.childArray){
-                    if([childNode isKindOfClass:[AKBoggleTreeNode class]]){
-                        int childIndex = (int)[node.childArray indexOfObject:childNode];
-                        NSString* itemString = [NSString stringWithFormat:@"%c",childIndex+'a'];
-                        for (int c=-1; c<=1; c++) {
-                            for (int r=-1; r<=1; r++) {
-                                AKBoggleBoardItem* nextItem = [self boardItemForRow:(row + r) andColumn:(column + c)];
-                                if(nextItem && [nextItem.string isEqualToString:itemString]){
-                                    [self findWordInBoard:board withNode:childNode string:[NSString stringWithFormat:@"%@%@",string,itemString] row:(row + r) andColumn:(column + c)];
-                                }
+    }
+    if(row >= 0 && row < self.dimension && column >= 0 && column < self.dimension){
+        AKBoggleBoardItem* item = [self boardItemForRow:row andColumn:column];
+        if(item && !item.visited){
+            item.visited = YES;
+            for(id childNode in node.childArray){
+                if([childNode isKindOfClass:[AKBoggleTreeNode class]]){
+                    int childIndex = (int)[node.childArray indexOfObject:childNode];
+                    NSString* itemString = [NSString stringWithFormat:@"%c",childIndex+'a'];
+                    for (int c=-1; c<=1; c++) {
+                        for (int r=-1; r<=1; r++) {
+                            AKBoggleBoardItem* nextItem = [self boardItemForRow:(row + r) andColumn:(column + c)];
+                            if(nextItem && [nextItem.string isEqualToString:itemString]){
+                                [self findWordInBoard:board withNode:childNode string:[NSString stringWithFormat:@"%@%@",string,itemString] row:(row + r) andColumn:(column + c)];
                             }
                         }
                     }
                 }
-                item.visited = NO;
             }
+            item.visited = NO;
         }
     }
 }
 
 - (AKBoggleBoardItem*)boardItemForRow:(NSInteger)row andColumn:(NSInteger)column{
     if(row >= 0 && row < self.dimension && column >= 0 && column < self.dimension){
-        NSMutableArray* array = [self.board objectAtIndex:row];
+        NSMutableArray* array = [self.boggleBoard objectAtIndex:row];
         return [array objectAtIndex:column];
     }
     return nil;
 }
 
-- (void)markBoardNotVisited{
-    for(NSArray* row in self.board){
-        for(AKBoggleBoardItem* boardItem in row){
-            boardItem.visited = NO;
-        }
-    }
-}
-
-- (NSArray*)createBoardWithBoard:(NSArray*)board{
+- (NSArray*)boggleBoardWithBoard:(NSArray*)board{
     NSMutableArray* boardArray = [NSMutableArray new];
     for(NSArray* array in board){
         NSMutableArray* row = [NSMutableArray new];
@@ -107,17 +99,18 @@
     return [boardArray copy];
 }
 
-- (AKBoggleTreeNode*)createTreeWithDictionary:(NSArray*)dictionary{
+- (AKBoggleTreeNode*)treeWithDictionary:(NSArray*)dictionary{
     AKBoggleTreeNode* rootNode = [AKBoggleTreeNode new];
     for(NSString* word in dictionary){
-        AKBoggleTreeNode* currentNode = rootNode;
-        //[word lowercaseString]
         NSUInteger length = [word length];
+        if(length < self.minWordLength){
+            continue;
+        }
         unichar buffer[length+1];
         [[word lowercaseString] getCharacters:buffer range:NSMakeRange(0, length)];
+        AKBoggleTreeNode* currentNode = rootNode;
         for(int i = 0; i < length; i++) {
             int index = buffer[i] - 'a';
-            NSLog(@"%C", buffer[i]);
             if([[currentNode.childArray objectAtIndex:index] isEqual:[NSNull null]]){
                 [currentNode.childArray replaceObjectAtIndex:index withObject:[AKBoggleTreeNode new]];
             }
