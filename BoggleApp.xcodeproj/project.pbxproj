@@ -16,7 +16,18 @@
 		9197CA3A1FC45B0500B66C12 /* AKBoggleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197CA391FC45B0500B66C12 /* AKBoggleManager.m */; };
 		9197CA3D1FC45C3B00B66C12 /* AKBoggleTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197CA3C1FC45C3B00B66C12 /* AKBoggleTreeNode.m */; };
 		9197CA401FC49BCC00B66C12 /* AKBoggleBoardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197CA3F1FC49BCC00B66C12 /* AKBoggleBoardItem.m */; };
+		9197CA481FC5333B00B66C12 /* BoggleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197CA471FC5333B00B66C12 /* BoggleAppTests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9197CA4A1FC5333B00B66C12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9197CA0D1FC459B100B66C12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9197CA141FC459B100B66C12;
+			remoteInfo = BoggleApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9197CA151FC459B100B66C12 /* BoggleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoggleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,10 +46,20 @@
 		9197CA3C1FC45C3B00B66C12 /* AKBoggleTreeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKBoggleTreeNode.m; sourceTree = "<group>"; };
 		9197CA3E1FC49BCC00B66C12 /* AKBoggleBoardItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKBoggleBoardItem.h; sourceTree = "<group>"; };
 		9197CA3F1FC49BCC00B66C12 /* AKBoggleBoardItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKBoggleBoardItem.m; sourceTree = "<group>"; };
+		9197CA451FC5333B00B66C12 /* BoggleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoggleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9197CA471FC5333B00B66C12 /* BoggleAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoggleAppTests.m; sourceTree = "<group>"; };
+		9197CA491FC5333B00B66C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9197CA121FC459B100B66C12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9197CA421FC5333B00B66C12 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -52,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				9197CA171FC459B100B66C12 /* BoggleApp */,
+				9197CA461FC5333B00B66C12 /* BoggleAppTests */,
 				9197CA161FC459B100B66C12 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				9197CA151FC459B100B66C12 /* BoggleApp.app */,
+				9197CA451FC5333B00B66C12 /* BoggleAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,7 +90,6 @@
 		9197CA171FC459B100B66C12 /* BoggleApp */ = {
 			isa = PBXGroup;
 			children = (
-				9197CA321FC45AC400B66C12 /* Models */,
 				9197CA301FC45AC400B66C12 /* Screens */,
 				9197CA2E1FC45AC400B66C12 /* Utility */,
 				9197CA181FC459B100B66C12 /* AppDelegate.h */,
@@ -119,11 +141,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		9197CA321FC45AC400B66C12 /* Models */ = {
+		9197CA461FC5333B00B66C12 /* BoggleAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				9197CA471FC5333B00B66C12 /* BoggleAppTests.m */,
+				9197CA491FC5333B00B66C12 /* Info.plist */,
 			);
-			path = Models;
+			path = BoggleAppTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +170,24 @@
 			productReference = 9197CA151FC459B100B66C12 /* BoggleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9197CA441FC5333B00B66C12 /* BoggleAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9197CA4C1FC5333B00B66C12 /* Build configuration list for PBXNativeTarget "BoggleAppTests" */;
+			buildPhases = (
+				9197CA411FC5333B00B66C12 /* Sources */,
+				9197CA421FC5333B00B66C12 /* Frameworks */,
+				9197CA431FC5333B00B66C12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9197CA4B1FC5333B00B66C12 /* PBXTargetDependency */,
+			);
+			name = BoggleAppTests;
+			productName = BoggleAppTests;
+			productReference = 9197CA451FC5333B00B66C12 /* BoggleAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,6 +200,11 @@
 					9197CA141FC459B100B66C12 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+					};
+					9197CA441FC5333B00B66C12 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9197CA141FC459B100B66C12;
 					};
 				};
 			};
@@ -175,6 +222,7 @@
 			projectRoot = "";
 			targets = (
 				9197CA141FC459B100B66C12 /* BoggleApp */,
+				9197CA441FC5333B00B66C12 /* BoggleAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +235,13 @@
 				9197CA251FC459B100B66C12 /* LaunchScreen.storyboard in Resources */,
 				9197CA221FC459B100B66C12 /* Assets.xcassets in Resources */,
 				9197CA371FC45ADF00B66C12 /* AKHomeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9197CA431FC5333B00B66C12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +261,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9197CA411FC5333B00B66C12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9197CA481FC5333B00B66C12 /* BoggleAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9197CA4B1FC5333B00B66C12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9197CA141FC459B100B66C12 /* BoggleApp */;
+			targetProxy = 9197CA4A1FC5333B00B66C12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9197CA231FC459B100B66C12 /* LaunchScreen.storyboard */ = {
@@ -329,12 +400,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = BoggleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boggle.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "";
 			};
 			name = Debug;
 		};
@@ -343,12 +416,44 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = BoggleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boggle.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "";
+			};
+			name = Release;
+		};
+		9197CA4D1FC5333B00B66C12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BoggleAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boggle.BoggleAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoggleApp.app/BoggleApp";
+			};
+			name = Debug;
+		};
+		9197CA4E1FC5333B00B66C12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BoggleAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boggle.BoggleAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoggleApp.app/BoggleApp";
 			};
 			name = Release;
 		};
@@ -369,6 +474,15 @@
 			buildConfigurations = (
 				9197CA2C1FC459B100B66C12 /* Debug */,
 				9197CA2D1FC459B100B66C12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9197CA4C1FC5333B00B66C12 /* Build configuration list for PBXNativeTarget "BoggleAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9197CA4D1FC5333B00B66C12 /* Debug */,
+				9197CA4E1FC5333B00B66C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
